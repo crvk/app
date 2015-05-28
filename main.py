@@ -13,4 +13,4 @@ def main():
     persons = Persons(PersonClient.getPersons()).get()
     return render_template('index.html', name=persons[0]['first_name'], persons=persons)
 
-app.run(debug=True, port=8000)
+app.run(port=8000)
