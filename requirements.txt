@@ -1,0 +1,5 @@
+requests
+pyyaml
+flask_bootstrap
+flask_restful
+flask
