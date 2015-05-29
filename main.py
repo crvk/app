@@ -18,4 +18,4 @@ def main():
     except: ValueError
     return render_template('index.html', message='Failed to connect to Person Service')
 
-app.run(port=8000, debug=True)
+app.run(port=8000)
