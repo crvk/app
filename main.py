@@ -8,9 +8,14 @@ app = Flask("app")
 api = Api(app)
 Bootstrap(app)
 
+
 @app.route("/")
 def main():
-    persons = Persons(PersonClient.getPersons()).get()
-    return render_template('index.html', name=persons[0]['first_name'], persons=persons)
+    try:
+        persons = Persons(PersonClient.getPersons()).get()
+        return render_template('index.html', name=persons[0]['first_name'], persons=persons)
 
-app.run(port=8000)
+    except: ValueError
+    return render_template('index.html', message='Failed to connect to Person Service')
+
+app.run(port=8000, debug=True)
